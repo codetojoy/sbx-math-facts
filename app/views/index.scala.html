@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Math Facts</title>
+    <title>Math Tidbits</title>
     <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/main.css")">
 </head>
 <body>
     <main>
-        <h1>Math Facts</h1>
+        <h1>Math Tidbits</h1>
         <p>Enter an integer to learn something about it.</p>
 
         <form data-bind="submit: check">
@@ -19,7 +19,10 @@
         <!-- ko with: result -->
         <section>
             <h2>Result for <span data-bind="text: n"></span></h2>
-            <p>Prime: <strong data-bind="text: prime ? 'yes' : 'no'"></strong></p>
+            <ul>
+                <li>Prime: <strong data-bind="text: prime ? 'yes' : 'no'"></strong></li>
+                <li>Palindromic: <strong data-bind="text: palindromic ? 'yes' : 'no'"></strong></li>
+            </ul>
         </section>
         <!-- /ko -->
 
