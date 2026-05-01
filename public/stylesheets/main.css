@@ -1,0 +1,27 @@
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    max-width: 640px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    color: #222;
+}
+
+h1 { margin-bottom: 0.25rem; }
+
+form { margin: 1rem 0; }
+
+input[type=text] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 12rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button[disabled] { cursor: not-allowed; opacity: 0.6; }
+
+.error { color: #b00020; }

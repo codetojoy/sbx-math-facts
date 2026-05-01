@@ -1,0 +1,35 @@
+@()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Math Facts</title>
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/main.css")">
+</head>
+<body>
+    <main>
+        <h1>Math Facts</h1>
+        <p>Enter an integer to learn something about it.</p>
+
+        <form data-bind="submit: check">
+            <input type="text" data-bind="value: input, valueUpdate: 'input'" placeholder="e.g. 17" autofocus>
+            <button type="submit" data-bind="enable: canSubmit">Check</button>
+        </form>
+
+        <!-- ko with: result -->
+        <section>
+            <h2>Result for <span data-bind="text: n"></span></h2>
+            <p>Prime: <strong data-bind="text: prime ? 'yes' : 'no'"></strong></p>
+        </section>
+        <!-- /ko -->
+
+        <section data-bind="visible: error">
+            <p class="error" data-bind="text: error"></p>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+    <script src="@routes.Assets.versioned("javascripts/app.js")"></script>
+</body>
+</html>
