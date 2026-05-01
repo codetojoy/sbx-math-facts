@@ -19,13 +19,6 @@
                 contentType: 'application/json',
                 data: JSON.stringify({ n: n })
             }).done(function (data) {
-                // FIXME STUB: backend does not yet return `palindromic`. Computing it
-                // client-side so the UI can display the fact. REMOVE this block once
-                // the backend MathFacts DTO includes `palindromic`.
-                if (data && data.palindromic === undefined) {
-                    var s = String(data.n);
-                    data.palindromic = s === s.split('').reverse().join('');
-                }
                 self.result(data);
             }).fail(function (xhr) {
                 self.error('Request failed: ' + xhr.status + ' ' + xhr.statusText);
