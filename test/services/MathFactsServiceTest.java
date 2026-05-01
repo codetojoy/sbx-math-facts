@@ -51,4 +51,40 @@ public class MathFactsServiceTest {
         assertEquals(17, facts.n);
         assertTrue(facts.prime);
     }
+
+    @Test
+    public void negativesAreNotPalindromic() {
+        assertFalse(service.isPalindromic(-1));
+        assertFalse(service.isPalindromic(-121));
+    }
+
+    @Test
+    public void singleDigitsArePalindromic() {
+        assertTrue(service.isPalindromic(0));
+        assertTrue(service.isPalindromic(7));
+        assertTrue(service.isPalindromic(9));
+    }
+
+    @Test
+    public void multiDigitPalindromes() {
+        assertTrue(service.isPalindromic(11));
+        assertTrue(service.isPalindromic(121));
+        assertTrue(service.isPalindromic(1221));
+        assertTrue(service.isPalindromic(12321));
+    }
+
+    @Test
+    public void multiDigitNonPalindromes() {
+        assertFalse(service.isPalindromic(12));
+        assertFalse(service.isPalindromic(123));
+        assertFalse(service.isPalindromic(1231));
+    }
+
+    @Test
+    public void factsForBundlesPalindromic() {
+        var facts = service.factsFor(121);
+        assertEquals(121, facts.n);
+        assertFalse(facts.prime);
+        assertTrue(facts.palindromic);
+    }
 }
